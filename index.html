@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Splitter</title>
+    <meta
+        content="Line Splitter offers you an intuitive and easy to use interface for spliting a string of text. This tool could be useful for editing environment variables for example."
+        name="description">
+    <link rel="icon" href="./line-splitter.ico">
+    <script src="./scripts/main.js" type="module"></script>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+
+    <div id="page-container">
+
+        <header class="bm-l">
+            <h1>Line Splitter</h1>
+            <p>An intuitive and easy to use interface for spliting a string of text.</p>
+        </header>
+
+        <main>
+
+            <div class="badge">
+                <label class="ladder">
+                    <h2>Input:</h2>
+                    <input id="input" type="text">
+                </label>
+            </div>
+
+            <div class="badge train-bottom">
+
+                <label class="ladder rm-m">
+                    <span>Separator:</span>
+                    <input id="separator-split" type="text" value=";">
+                </label>
+
+                <button id="btn-split" class="button--green">Split</button>
+
+            </div>
+
+            <div class="badge">
+                <textarea name="" id="textarea" cols="30" rows="10" autocomplete="off" autocorrect="off"
+                    autocapitalize="off" spellcheck="false" class="bm-m"></textarea>
+                <p id="lines-counter">Lines: 0</p>
+            </div>
+
+            <div class="badge">
+                <label>
+                    <input type="checkbox" id="bind-separators" name="bind-separators" value="Bike" checked>
+                    <span>Bind separators</span>
+                </label>
+            </div>
+
+            <div class="badge train-bottom">
+
+                <label class="ladder rm-m">
+                    <span>Separator:</span>
+                    <input id="separator-join" type="text" value=";">
+                </label>
+
+                <button id="btn-join" class="button--green">Join</button>
+
+            </div>
+
+            <div class="badge">
+
+                <div class="divorced">
+
+                    <label for="output">
+                        <h2>Output:</h2>
+                    </label>
+
+                    <button id="copy-output" class="train bm-m button--blue button-fancy"><img width="16" height="16"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABLElEQVQoz2WROy9EURSFz3gEheRqdNNIhJB4FTqFP6AdM5GMR+jUNH4EjaCjnaGaXkQU4g8MMfHK6CRCREh81tn7zsTjnqx7V85eZ+191g0hEIQ2YZoP4EsLXpjUTkv4UR7njUuGGBXLcsqW78dyqzDMo86di2VMXmI3CnAb+rgjPhfi7algO3J36KWq4qewYacmGOGYCgnyi4JZ6gyq84CdXeeZE840RZ0xd8hzZb3jLCvy2dG3Uzhi0QUFat6Pol1xT6xLOGShIbi274yK78KceMdvBxeUWKOHbGgk0xTkqVlc5WipW2T+CgpxSOu5ZDn8c5jSPyizzxM5d0jTdIEZFjlgU2Hn0uDdoXmLTLpRYlXvhG6tRKzCvAuibQxmmVeNe2vrhnse6A/hG5Ji/bc9GHASAAAAAElFTkSuQmCC"
+                            alt=""><span class="lm-m">Copy to Clipboard</span></button>
+
+                </div>
+                <input id="output" type="text">
+
+            </div>
+
+
+        </main>
+
+        <footer>
+            <p class="tm-l">Powered by VikSoft</p>
+            <p><a href="https://github.com/vikcch/line-splitter">GitHub repository</a></p>
+            <p>Line Splitter is Open Source Software licensed under the <a
+                    href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3.</a></p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
