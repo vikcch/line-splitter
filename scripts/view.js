@@ -2,7 +2,9 @@ export default class View {
 
     constructor() {
 
+
         this.input = document.querySelector('#input');
+        this.pasteFromClipboardButton = document.querySelector('#paste-input');
 
         this.separatorSplitInput = document.querySelector('#separator-split');
         this.splitButton = document.querySelector('#btn-split');

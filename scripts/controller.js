@@ -16,7 +16,8 @@ export default class Controller {
         const buttonHandlers = {
             splitButton: this.handlerSplitButton_OnClick,
             joinButton: this.handlerJoinButton_OnClick,
-            copyToClipboardButton: this.handlerCopyToClipboardButton_OnClick
+            copyToClipboardButton: this.handlerCopyToClipboardButton_OnClick,
+            pasteFromClipboardButton: this.handlerPasteFromClipboardButton_OnClick
         };
         this.view.bindButtons(buttonHandlers);
 
@@ -62,6 +63,20 @@ export default class Controller {
         this.view.output.value = joined;
     }
 
+    handlerPasteFromClipboardButton_OnClick = async (event) => {
+
+        try {
+
+            const text = await navigator.clipboard.readText();
+            this.view.input.value = text;
+
+        } catch (error) {
+
+            console.error(error);
+            alert('Something went wrong!!');
+        }
+    }
+
     handlerSplitInput_OnInput = (event) => {
 
         if (this.view.bindSeparatorsCheck.checked) {
@@ -91,11 +106,13 @@ export default class Controller {
 
     handlerBindSeperatorsCheck_OnClick = (event) => { }
 
-    handlerCopyToClipboardButton_OnClick = (event) => {
+    handlerCopyToClipboardButton_OnClick = async (event) => {
 
         const text = this.view.output.value;
 
-        navigator.clipboard.writeText(text).then(() => {
+        try {
+
+            await navigator.clipboard.writeText(text);
 
             this.view.copyToClipboardButton.classList.add('copied-color');
 
@@ -104,10 +121,12 @@ export default class Controller {
                 this.view.copyToClipboardButton.classList.remove('copied-color');
             }, 3000);
 
-        }, function (err) {
+        } catch (error) {
 
-            console.error(err);
-            alert('Something went wrong!!')
-        });
+            console.error(error);
+            alert('Something went wrong!!');
+        }
+
+        await navigator.clipboard.writeText(text);
     }
 }
